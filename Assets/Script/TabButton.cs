@@ -8,9 +8,11 @@ using UnityEngine.EventSystems;
 public class TabButton : MonoBehaviour, IPointerClickHandler, IPointerExitHandler 
 {
     public Tabbar tabbar;
+    public HomeBody homeBody;
 
     public void OnPointerClick(PointerEventData eventData){
         tabbar.OnTapSelected(this);
+        homeBody.MoveTo(gameObject.name);
     }
 
     public void OnPointerExit(PointerEventData eventData){
