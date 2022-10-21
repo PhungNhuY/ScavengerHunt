@@ -66,6 +66,12 @@ public class Tabbar : MonoBehaviour
         tabbarText.transform.position = selectedTab.transform.position;
         blackBlock.transform.position = selectedTab.transform.position;
         ResetTabs();
+
+        // resize tabbar
+        transform.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            transform.GetComponent<RectTransform>().sizeDelta.x,
+            btnSizeDevice
+        );
     }
 
     public void OnTabExit(TabButton button)
@@ -78,7 +84,6 @@ public class Tabbar : MonoBehaviour
         selectedTab = button;
         ResetTabs();
         // button.GetComponent<Image>().color = Color.gray;
-
         for (int i = 0; i < rawPos.Count; i++)
         {
             tabButtons[i].transform.Find("SVG Image").transform.position = rawPos[i];
