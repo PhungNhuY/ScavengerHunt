@@ -5,14 +5,25 @@ using UnityEngine;
 public class HomeBody : MonoBehaviour
 {
     Camera cam;
-    float camWidth;
+    float camWidth, camHeight, deviceHeight, deviceWidth;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+        camHeight = cam.orthographicSize;
         camWidth = cam.orthographicSize * cam.aspect;
-        camWidth *= 2;
+        deviceHeight = Display.main.systemHeight;
+        deviceWidth = Display.main.systemWidth;
+
+        float headerSizeCam = camWidth * 2f / 5f;
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            deviceWidth * 5, 
+            deviceHeight - deviceWidth / 5 * 2
+        );
+        Debug.Log(transform.position);
+        transform.position -= new Vector3(0f, headerSizeCam, 0f);
+        Debug.Log(transform.position);
     }
 
     // Update is called once per frame
@@ -26,11 +37,11 @@ public class HomeBody : MonoBehaviour
         float pos = 0;
         if (pageName == "Store")
         {
-            pos = camWidth * 2;
+            pos = camWidth * 2 * 2;
         }
         else if (pageName == "Events")
         {
-            pos = camWidth;
+            pos = camWidth * 2;
         }
         else if (pageName == "Home")
         {
@@ -38,11 +49,11 @@ public class HomeBody : MonoBehaviour
         }
         else if (pageName == "Challenges")
         {
-            pos = -camWidth;
+            pos = -camWidth * 2;
         }
         else if (pageName == "Daily")
         {
-            pos = -camWidth * 2;
+            pos = -camWidth * 2 * 2;
         }
 
         StartCoroutine(SmoothMove(

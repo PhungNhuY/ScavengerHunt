@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "12648d38",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "12648d38",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 16359,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,18 @@
             "deviceId": "12648d38",
             "name": "com.android.settings",
             "processId": 20813,
+            "exited": false
+        },
+        {
+            "deviceId": "12648d38",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 11712,
+            "exited": false
+        },
+        {
+            "deviceId": "12648d38",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16359,
             "exited": false
         }
     ],

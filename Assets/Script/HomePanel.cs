@@ -25,6 +25,11 @@ public class HomePanel : MonoBehaviour
 
         gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
         gridLayoutGroup.spacing = new Vector2(spacing, spacing);
+
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            0,
+            (numberOfElement+1)/2 * (cellSize + spacing) + 50
+        );
     }
 
     // Update is called once per frame
